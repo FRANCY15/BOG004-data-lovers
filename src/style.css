@@ -44,6 +44,11 @@ body{
     align-items: center;
 }
 
+.img-charts{
+    width: 50px;
+    justify-content: center;
+}
+
 /* Pantalla 1 */
 /* Banner principal */
 
@@ -227,6 +232,7 @@ body{
     color: white;
     transform: rotateY(180deg);
     border-radius: 30px;
+    align-items: center;
 }
 
 .flip-card-back h1{
@@ -258,6 +264,12 @@ body{
     padding-right: 20px;
 }
 
+.flip-card-back button{
+    background-color: #325C59;
+    color: white;
+
+}
+
 /* Panel Ordenar */
 .filtros-busqueda {
     height: 200px;
@@ -276,7 +288,6 @@ body{
     color: rgb(50, 92, 89);
     width: 30px;
 }
-
 
 /* Sección pelicula individual */
 
@@ -372,10 +383,11 @@ body {
 }
 .img-slider__container-1 {
     display: flex;
-    column-gap:20px;
+    column-gap: 0px;
     width: 100%;
-    overflow-x: auto;
-    justify-content: start;
+    overflow-x:auto;
+    text-align: start;
+    justify-content: flex-start;
     align-items: center;
     padding: 70px;
     overflow-y:hidden;
@@ -405,6 +417,14 @@ body {
     transform: scale(1.1);
 }
 
+.btn-seleccion{
+    border-radius: 30px;
+    width: 100px;
+    background-color: #325C59;
+}
+
+
+
 /*pagina seleccion personje vehiculo y locación*/
 
 
@@ -423,6 +443,15 @@ body {
     width: 140px;
     height: 140px;
 }
+
+#pagina-individual-seleccion{
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
 
 /* Pie de página */
 .texto-footer{

@@ -22,23 +22,8 @@ let muestraPeliculas = [
 ];
 
 let resultadosPeliculas = [
-  {"title": "Castle in the Sky",
-    "release_date": "1986",
-  },
-  { "title": "My Neighbor Totoro",
+    { "title": "My Neighbor Totoro",
     "release_date": "1988",
-  },
-  { "title": "Kiki's Delivery Service",
-    "release_date": "1989",
-  },
-  { "title": "Grave of the Fireflies",
-    "release_date": "1988",
-  },
-  { "title": "Only Yesterday",
-    "release_date": "1991",
-  },
-  {"title": "Castle in the Sky",
-  "release_date": "1986",
   },
 ];
 

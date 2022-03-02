@@ -18,7 +18,7 @@
       <div class="contenedor">
         <nav class="menu">
           <a href="">home</a>
-          <a>about</a>
+          <a id="about" href="#resumen">about</a>
           <a id="galery">galery</a>
         </nav>
       </div>
@@ -32,7 +32,7 @@
         </div>
       </section>
       <!-- Resumen -->
-      <section class="resumen">         
+      <section id="resumen" class="resumen">         
           <div class="texto-resumen">
             <h1>STUDIO GHIBLI....</h1>
             <p>The Studio Ghibli (スタジオジブリ Sutajio Jiburi) is a Japanese animation studio, based in Tokyo. It was founded in 1985 by Hayao Miyazaki and Isao Takahata, and to date, they have made more than 20 films, in addition to other types of work (short films, commercials. They have the respect of the Japanese public and also the international one, where the critics and the animation sector show them a lot of respect. Due to its popularity, the Ghibli Museum was opened, which is located on the outskirts of Tokyo and Ghibli Park is expected to be ready by 2022.</p>
@@ -65,6 +65,7 @@
       <div class="filtros-busqueda">
         <a href=""><img src="img/Vector (2).png" alt="alfabeticamente" class="icono-filtros" id="ordenar-az" title="Ordenar Alfabéticamente" tooltip-dir="left"></a>
         <a href=""><img src="img/Vector (3).png" alt="cronologicamente" class="icono-filtros" id="ordenar-fecha" title="Ordenar Cronológicamente" tooltip-dir="left"></a>
+        <a href=""><img src="img/topAnimaciones.png" alt="top-animaciones" class="icono-filtros" id="filtro-animaciones" title="Animaciones RT_Score > 90"></a>
       </div> 
 
     <!-- Galería de peliculas -->      
@@ -82,6 +83,12 @@
 
     <div id="poster-descripcion">      
     </div> 
+    </section>
+
+    <section>
+      <div>
+        <canvas id="myChart"></canvas>
+      </div>
     </section>
 
     <!-- pie de página -->
