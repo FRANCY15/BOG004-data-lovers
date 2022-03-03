@@ -1,5 +1,4 @@
 
-
 export const filtrarPeliculas = (peliculas, datosBusqueda) => {
     let resultadoFiltro = peliculas.filter(pelicula => {
         const {title} = pelicula;
@@ -30,7 +29,7 @@ export const peliculasxAño = (peliculas) => {
 export const filtrarPeliculasScore = (peliculas) => {
     let resultadoTheBestFilms = peliculas.filter(pelicula => {
         const {rt_score} = pelicula;
-        return rt_score > 95;
+        return rt_score >= 95;
     })
     return resultadoTheBestFilms;
 }

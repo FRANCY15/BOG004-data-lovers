@@ -22,6 +22,13 @@ btn_Cronologia.addEventListener("click",OrdenarCronologicamente);
 about.addEventListener('click', mostrarAbout);
 topAnimations.addEventListener('click', OrdenarScore)
 
+ // Ocultar y mostrar paginas
+
+ document.getElementById('galeria-animaciones').style.display = 'none';
+ document.getElementById('pag-informacion-peliculas').style.display = 'none';
+ document.getElementById('pagina-individual-seleccion').style.display = 'none';
+ document.getElementById('myChart').style.display = 'none';
+
 fetch('./data/ghibli/ghibli.json')
     .then(response => response.json())
     .then(data => peliculas = data.films) 
@@ -38,7 +45,7 @@ fetch('./data/ghibli/ghibli.json')
     function iterarPelicula (peliculas){
         let HTMLfinal = '';
 
-        peliculas.forEach((pelicula) => { // ForEach recibe dos parametros, el elemento que está recorriendo (pelicula) y el indice de ese elemento
+        peliculas.forEach((pelicula) => { 
             HTMLfinal += `
             <div id="flip-card" class="flip-card">
                     <div class="flip-card-inner">
@@ -57,34 +64,20 @@ fetch('./data/ghibli/ghibli.json')
         });
         lineaTiempoSection.innerHTML = HTMLfinal;
 
-        // se ejecuta la funcion despues de que las tarjetas se han cargado en la vista
 
         const selectAnimaciones = document.getElementById("animaciones")
         selectAnimaciones.addEventListener("click", captura_click); 
     }
 
-            // al capturar el click se envia un evento, de ese evento nos interesa que tipo de tag es html es?, si es un botton u otro tipo de etiqueta, si es botton (extaremos el id de ese boton que es el que vamos a usar para extarer la informacion detallada de cada pelicula).
-
-            // e nos trae un objeto (esta la informacioninterna que contiene el navegador)del cual vamos a extraer el target que es el dato que contiene el id de ese elemento, y el tagname nos devuelve el nombre del elemento que estamos seleccionando para hacer la comparacion
 
     function captura_click(e){
         if(e.target.tagName === 'BUTTON'){
             const idFilm = e.target.id
             const filmBusqueda = peliculas.filter(pelicula => idFilm === pelicula.id)
-
-            // filter me devuelve un array con el resultado de la busqueda, en este caso me devuelve un array con un solo objeto. Para acceder a ese objeto necesitamos acceder por la posicion [0]
             
             mostrarInfoPeli(filmBusqueda)
         }
     }
-
-
-   // Ocultar y mostrar paginas
-
-    document.getElementById('galeria-animaciones').style.display = 'none';
-    document.getElementById('pag-informacion-peliculas').style.display = 'none';
-    document.getElementById('pagina-individual-seleccion').style.display = 'none';
-    document.getElementById('myChart').style.display = 'none';
 
 
     function mostrarAnimaciones (){
@@ -133,7 +126,7 @@ fetch('./data/ghibli/ghibli.json')
                 <li>Director: ${director}</li>
                 <li>Producer: ${producer}</li>
                 <li>Release Date: ${release_date}</li>
-                <li>Rt_score: ${rt_score}</li>
+                <li>Raiting Score: ${rt_score}</li>
                 </div>
             </div>
             
@@ -162,7 +155,6 @@ fetch('./data/ghibli/ghibli.json')
         selectBtnLocation.addEventListener("click", () => mostrarCarrusel(locations, idFilm))
         selectBtnVehicles.addEventListener("click", () => mostrarCarrusel(vehicles, idFilm))
 
-        // debido a que se va a enviar un parametro a la funcion mostrarcarrusel que esta dentro del addEven Listener es necesario enviarlo como callback porque de lo contrario se va a ejecutar automaticamente sin esperar el click
     } 
 
     function mostrarCarrusel(infoParaCarrousel, idFilm) {
@@ -191,12 +183,10 @@ fetch('./data/ghibli/ghibli.json')
 // pagina people prueba
 
 function captura_personaje(e, infoParaCarrousel, idFilm){
-    // if(e.target.tagName === 'img'){
     const idInfoParaCarrousel = e.target.id
     const busqueda = infoParaCarrousel.filter(itemCarrousel => idInfoParaCarrousel === itemCarrousel.id)
         
         mostrarDetallePersonaje(busqueda, idFilm)
-   // }
 
 
     function mostrarDetallePersonaje(info, idFilm){
