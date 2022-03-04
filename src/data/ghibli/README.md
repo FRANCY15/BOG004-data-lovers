@@ -4,7 +4,7 @@ Se dio lectura al proyecto, y se acordó trabajar sobre la tematica de Studio Gh
 
 A continuación se relacionan los prototipos presentados.
 
-![Alt text](src\img\Prototipo1_Home_LP)
+![Alt text](..\.\src\img\Prototipo1_Home_LP)
 ![Alt text](src\img\Prototipo_animaciones_LP)
 ![Alt text](src\img\Prototipo2)
 
